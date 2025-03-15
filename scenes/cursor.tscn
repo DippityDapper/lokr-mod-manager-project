@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://i6de8i7tfx1q"]
+
+[ext_resource type="Texture2D" uid="uid://ct4lf07c1crxo" path="res://sprites/cursor.png" id="1_3dbns"]
+[ext_resource type="Script" path="res://scripts/Cursor.cs" id="2_6v7w7"]
+[ext_resource type="Texture2D" uid="uid://bh2sysdb5e71o" path="res://sprites/cursor_down.png" id="3_mksph"]
+[ext_resource type="AudioStream" uid="uid://dmbem323rr6em" path="res://sounds/knock_1.wav" id="4_jpvk8"]
+[ext_resource type="AudioStream" uid="uid://dobdqiir82mgn" path="res://sounds/knock_2.wav" id="5_ef53f"]
+[ext_resource type="AudioStream" uid="uid://dtvcqhe1m47th" path="res://sounds/knock_3.wav" id="6_eh2gc"]
+[ext_resource type="AudioStream" uid="uid://8jsj6h8wff2y" path="res://sounds/knock_4.wav" id="7_54h0u"]
+
+[node name="Cursor" type="Sprite2D" node_paths=PackedStringArray("ParticleSpawnLocation", "sounds")]
+z_index = 2
+texture = ExtResource("1_3dbns")
+script = ExtResource("2_6v7w7")
+cursorTexture = ExtResource("1_3dbns")
+cursorDownTexture = ExtResource("3_mksph")
+ParticleSpawnLocation = NodePath("Marker2D")
+sounds = [NodePath("AudioStreamPlayer"), NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jpvk8")
+max_polyphony = 3
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ef53f")
+max_polyphony = 3
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_eh2gc")
+max_polyphony = 3
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_54h0u")
+max_polyphony = 3
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-24, -28)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://2uw02gdj3g1j"]
+
+[ext_resource type="Material" uid="uid://bihejw0k12ymr" path="res://resources/click_particles.tres" id="1_0ms6p"]
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+z_index = 1
+emitting = false
+amount = 5
+process_material = ExtResource("1_0ms6p")
+one_shot = true
+explosiveness = 1.0
